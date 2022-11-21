@@ -37,5 +37,12 @@ namespace BookProject
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_admin_Click(object sender, EventArgs e)
+        {
+            AdminView av1 = new AdminView();
+            av1.Show();
+            this.Hide();
+        }
     }
 }

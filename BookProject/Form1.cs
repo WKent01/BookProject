@@ -10,9 +10,9 @@ namespace BookProject
         string path = "BookStore.db";
         string cs = @"URI=file:" + Application.StartupPath + "\\Bookstore.db";
 
-        SQLiteConnection con;
-        SQLiteCommand cmd;
-        SQLiteDataReader dr;
+        //SQLiteConnection con;
+       // SQLiteCommand cmd;
+        //SQLiteDataReader dr;
 
         public Form1()
         {
@@ -24,24 +24,17 @@ namespace BookProject
 
         }
 
-        private void btnConnect_Click(object sender, EventArgs e)
-        {
-            var con = new SQLiteConnection(cs);
-
-            try
-            {
-                con.Open();
-                MessageBox.Show("Connected");
-            }catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
         private void btn_admin_Click(object sender, EventArgs e)
         {
             AdminView av1 = new AdminView();
             av1.Show();
+            this.Hide();
+        }
+
+        private void btn_login_Click(object sender, EventArgs e)
+        {
+            Customer_View shop1 = new Customer_View();
+            shop1.Show();
             this.Hide();
         }
     }

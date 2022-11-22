@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.lbl_fName = new System.Windows.Forms.Label();
-            this.lbl_lName = new System.Windows.Forms.Label();
+            this.lbl_Password = new System.Windows.Forms.Label();
             this.tb_fName = new System.Windows.Forms.TextBox();
-            this.tb_lName = new System.Windows.Forms.TextBox();
+            this.tb_Password = new System.Windows.Forms.TextBox();
             this.btn_login = new System.Windows.Forms.Button();
             this.btn_admin = new System.Windows.Forms.Button();
             this.btn_createAcc = new System.Windows.Forms.Button();
@@ -46,14 +46,14 @@
             this.lbl_fName.TabIndex = 1;
             this.lbl_fName.Text = "First Name:";
             // 
-            // lbl_lName
+            // lbl_Password
             // 
-            this.lbl_lName.AutoSize = true;
-            this.lbl_lName.Location = new System.Drawing.Point(60, 120);
-            this.lbl_lName.Name = "lbl_lName";
-            this.lbl_lName.Size = new System.Drawing.Size(66, 15);
-            this.lbl_lName.TabIndex = 2;
-            this.lbl_lName.Text = "Last Name:";
+            this.lbl_Password.AutoSize = true;
+            this.lbl_Password.Location = new System.Drawing.Point(60, 120);
+            this.lbl_Password.Name = "lbl_Password";
+            this.lbl_Password.Size = new System.Drawing.Size(60, 15);
+            this.lbl_Password.TabIndex = 2;
+            this.lbl_Password.Text = "Password:";
             // 
             // tb_fName
             // 
@@ -62,12 +62,12 @@
             this.tb_fName.Size = new System.Drawing.Size(127, 23);
             this.tb_fName.TabIndex = 3;
             // 
-            // tb_lName
+            // tb_Password
             // 
-            this.tb_lName.Location = new System.Drawing.Point(132, 117);
-            this.tb_lName.Name = "tb_lName";
-            this.tb_lName.Size = new System.Drawing.Size(127, 23);
-            this.tb_lName.TabIndex = 4;
+            this.tb_Password.Location = new System.Drawing.Point(132, 117);
+            this.tb_Password.Name = "tb_Password";
+            this.tb_Password.Size = new System.Drawing.Size(127, 23);
+            this.tb_Password.TabIndex = 4;
             // 
             // btn_login
             // 
@@ -107,9 +107,9 @@
             this.Controls.Add(this.btn_createAcc);
             this.Controls.Add(this.btn_admin);
             this.Controls.Add(this.btn_login);
-            this.Controls.Add(this.tb_lName);
+            this.Controls.Add(this.tb_Password);
             this.Controls.Add(this.tb_fName);
-            this.Controls.Add(this.lbl_lName);
+            this.Controls.Add(this.lbl_Password);
             this.Controls.Add(this.lbl_fName);
             this.Name = "Form1";
             this.Text = "Login";
@@ -121,9 +121,9 @@
 
         #endregion
         private Label lbl_fName;
-        private Label lbl_lName;
+        private Label lbl_Password;
         private TextBox tb_fName;
-        private TextBox tb_lName;
+        private TextBox tb_Password;
         private Button btn_login;
         private Button btn_admin;
         private Button btn_createAcc;

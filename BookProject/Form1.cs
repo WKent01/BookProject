@@ -1,6 +1,7 @@
 using System.Windows.Forms;
 using System.Data.SQLite;
-
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace BookProject
 {
@@ -31,11 +32,45 @@ namespace BookProject
             this.Hide();
         }
 
+        private Boolean login()
+        {
+            SQLiteConnection con = new SQLiteConnection(@"data source =  C:\Users\kentw\source\repos\BookProject\BookProject\BookStore.db");
+            con.Open();
+
+            SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM Customer WHERE FName = \"" + tb_fName.Text.Trim() + "\" AND Password = \"" + tb_Password.Text.Trim() + "\"", con);
+            SQLiteDataAdapter da = new SQLiteDataAdapter(cmd);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                da.Fill(dt);
+
+                return dt.Rows.Count > 0;
+
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return false;
+
+
+        }
+
         private void btn_login_Click(object sender, EventArgs e)
         {
-            Customer_View shop1 = new Customer_View();
-            shop1.Show();
-            this.Hide();
+
+            if (login())
+            {
+                Customer_View shop1 = new Customer_View();
+                shop1.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid login");
+            }
         }
     }
 }

@@ -40,6 +40,8 @@
             this.btn_viewCart = new System.Windows.Forms.Button();
             this.btn_account = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.dg_shopView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_shopView)).BeginInit();
             this.SuspendLayout();
             // 
             // cb_sortBy
@@ -152,11 +154,21 @@
             this.button1.Text = "View Order History";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // dg_shopView
+            // 
+            this.dg_shopView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_shopView.Location = new System.Drawing.Point(12, 104);
+            this.dg_shopView.Name = "dg_shopView";
+            this.dg_shopView.RowTemplate.Height = 25;
+            this.dg_shopView.Size = new System.Drawing.Size(776, 281);
+            this.dg_shopView.TabIndex = 13;
+            // 
             // Customer_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dg_shopView);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_account);
             this.Controls.Add(this.btn_viewCart);
@@ -171,6 +183,8 @@
             this.Controls.Add(this.cb_sortBy);
             this.Name = "Customer_View";
             this.Text = "Customer View";
+            this.Load += new System.EventHandler(this.Customer_View_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_shopView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -190,5 +204,6 @@
         private Button btn_viewCart;
         private Button btn_account;
         private Button button1;
+        private DataGridView dg_shopView;
     }
 }

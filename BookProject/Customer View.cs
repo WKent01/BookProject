@@ -23,5 +23,10 @@ namespace BookProject
             c1.Show();
             
         }
+
+        private void Customer_View_Load(object sender, EventArgs e)
+        {
+            lbl_userName.Text = Form1.FName;
+        }
     }
 }

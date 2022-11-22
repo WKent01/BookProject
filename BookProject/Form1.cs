@@ -8,8 +8,10 @@ namespace BookProject
     public partial class Form1 : Form
     {
 
-        string path = "BookStore.db";
-        string cs = @"URI=file:" + Application.StartupPath + "\\Bookstore.db";
+        //string path = "BookStore.db";
+        //string cs = @"URI=file:" + Application.StartupPath + "\\Bookstore.db";
+        public static String FName = "";
+        public static String Pw = "";
 
         //SQLiteConnection con;
        // SQLiteCommand cmd;
@@ -64,6 +66,8 @@ namespace BookProject
             if (login())
             {
                 Customer_View shop1 = new Customer_View();
+                FName = tb_fName.Text.Trim();
+                Pw = tb_Password.Text.Trim();
                 shop1.Show();
                 this.Hide();
             }

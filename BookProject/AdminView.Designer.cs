@@ -58,10 +58,20 @@
             // cb_tblSelect
             // 
             this.cb_tblSelect.FormattingEnabled = true;
+            this.cb_tblSelect.Items.AddRange(new object[] {
+            "Author",
+            "Orders",
+            "Customer",
+            "Supplier",
+            "Supplier_Rep",
+            "Book_Categories",
+            "Books",
+            "Order_Items"});
             this.cb_tblSelect.Location = new System.Drawing.Point(150, 19);
             this.cb_tblSelect.Name = "cb_tblSelect";
             this.cb_tblSelect.Size = new System.Drawing.Size(141, 23);
             this.cb_tblSelect.TabIndex = 2;
+            this.cb_tblSelect.SelectedIndexChanged += new System.EventHandler(this.cb_tblSelect_SelectedIndexChanged);
             // 
             // lb_tblSelect
             // 

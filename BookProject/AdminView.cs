@@ -20,7 +20,7 @@ namespace BookProject
         }
         public static DataTable ExecuteQuery(string query)
         {
-            SQLiteConnection con = new SQLiteConnection(@"data source = D:\AA School\AAA CURRENT CLASSES\CSCI 4325 Database Management Systems\Database Project\BookProject\BookStore.db");
+            SQLiteConnection con = new SQLiteConnection(@"data source =  C:\Users\kentw\source\repos\BookProject\BookProject\BookStore.db");
             con.Open();
             SQLiteCommand cmd = new SQLiteCommand(query, con);
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd);
@@ -46,6 +46,19 @@ namespace BookProject
                 dg_aTable.DataSource = ExecuteQuery(tb_aQuery.Text);
             }
             catch (SqliteException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cb_tblSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dg_aTable.Columns.Clear();
+                dg_aTable.DataSource = ExecuteQuery("SELECT * FROM " + cb_tblSelect.Text);
+            }
+            catch(SqliteException ex)
             {
                 MessageBox.Show(ex.Message);
             }

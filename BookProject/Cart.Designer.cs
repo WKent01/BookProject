@@ -46,6 +46,7 @@
             this.btn_remove.TabIndex = 0;
             this.btn_remove.Text = "Remove Item";
             this.btn_remove.UseVisualStyleBackColor = true;
+            this.btn_remove.Click += new System.EventHandler(this.btn_remove_Click);
             // 
             // btn_placeOrder
             // 
@@ -93,6 +94,7 @@
             this.lb_cart.Name = "lb_cart";
             this.lb_cart.Size = new System.Drawing.Size(591, 244);
             this.lb_cart.TabIndex = 6;
+            this.lb_cart.SelectedIndexChanged += new System.EventHandler(this.lb_cart_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -128,6 +130,7 @@
             this.Controls.Add(this.btn_remove);
             this.Name = "Cart";
             this.Text = "Cart";
+            this.Load += new System.EventHandler(this.Cart_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,10 +12,12 @@ using System.Windows.Forms;
 
 namespace BookProject
 {
+
     public partial class Customer_View : Form
     {
 
         private string query = "";
+        public static List<String[]> cart = new List<String[]>();
 
         public Customer_View()
         {
@@ -72,6 +75,37 @@ namespace BookProject
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btn_addToCart_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dg_shopView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Object obj = dg_shopView.Rows[0].Cells[0].Value;
+
+
+
+            String[] list = new String[6];
+
+            for(int i = 0; i < 5; i++)
+            {
+                String item = dg_shopView.Rows[e.RowIndex].Cells[i].Value.ToString();
+                list[i] = item;
+                
+            }
+
+            for(int i = 0; i < list.Length; i++) {
+                Console.WriteLine(list[i]);
+            }
+
+
+            //MessageBox.Show(dg_shopView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
+
+            cart.Add(list);
+
         }
     }
 }

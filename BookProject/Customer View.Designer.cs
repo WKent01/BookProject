@@ -116,6 +116,7 @@
             this.btn_addToCart.TabIndex = 6;
             this.btn_addToCart.Text = "Add to Cart";
             this.btn_addToCart.UseVisualStyleBackColor = true;
+            this.btn_addToCart.Click += new System.EventHandler(this.btn_addToCart_Click);
             // 
             // lbl_userName
             // 
@@ -172,6 +173,7 @@
             this.dg_shopView.RowTemplate.Height = 25;
             this.dg_shopView.Size = new System.Drawing.Size(776, 281);
             this.dg_shopView.TabIndex = 13;
+            this.dg_shopView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_shopView_CellContentClick);
             // 
             // Customer_View
             // 

@@ -25,5 +25,39 @@ namespace BookProject
             MessageBox.Show("Order has been placed", "Order Status Update");
             this.Close();
         }
+
+        private void Cart_Load(object sender, EventArgs e)
+        {
+
+            
+
+            foreach (String[] item in Customer_View.cart)
+            {
+                String outp = "";
+
+                
+                for(int i = 0; i < item.Length; i++)
+                {
+                    outp = outp + " " + item[i];
+
+                    
+                }
+
+
+                lb_cart.Items.Add(outp);
+                
+
+            }
+        }
+
+        private void lb_cart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_remove_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -33,7 +33,7 @@
             this.rb_ascending = new System.Windows.Forms.RadioButton();
             this.rb_descending = new System.Windows.Forms.RadioButton();
             this.btn_search = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_keyWord = new System.Windows.Forms.TextBox();
             this.btn_addToCart = new System.Windows.Forms.Button();
             this.lbl_userName = new System.Windows.Forms.Label();
             this.btn_logout = new System.Windows.Forms.Button();
@@ -47,6 +47,14 @@
             // cb_sortBy
             // 
             this.cb_sortBy.FormattingEnabled = true;
+            this.cb_sortBy.Items.AddRange(new object[] {
+            "",
+            "ISBN",
+            "Title",
+            "FName",
+            "LName",
+            "Publication_Date",
+            "Price"});
             this.cb_sortBy.Location = new System.Drawing.Point(96, 64);
             this.cb_sortBy.Name = "cb_sortBy";
             this.cb_sortBy.Size = new System.Drawing.Size(121, 23);
@@ -91,13 +99,14 @@
             this.btn_search.TabIndex = 4;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
-            // textBox1
+            // tb_keyWord
             // 
-            this.textBox1.Location = new System.Drawing.Point(43, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(277, 23);
-            this.textBox1.TabIndex = 5;
+            this.tb_keyWord.Location = new System.Drawing.Point(43, 35);
+            this.tb_keyWord.Name = "tb_keyWord";
+            this.tb_keyWord.Size = new System.Drawing.Size(277, 23);
+            this.tb_keyWord.TabIndex = 5;
             // 
             // btn_addToCart
             // 
@@ -159,6 +168,7 @@
             this.dg_shopView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_shopView.Location = new System.Drawing.Point(12, 104);
             this.dg_shopView.Name = "dg_shopView";
+            this.dg_shopView.ReadOnly = true;
             this.dg_shopView.RowTemplate.Height = 25;
             this.dg_shopView.Size = new System.Drawing.Size(776, 281);
             this.dg_shopView.TabIndex = 13;
@@ -175,7 +185,7 @@
             this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.lbl_userName);
             this.Controls.Add(this.btn_addToCart);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_keyWord);
             this.Controls.Add(this.btn_search);
             this.Controls.Add(this.rb_descending);
             this.Controls.Add(this.rb_ascending);
@@ -197,7 +207,7 @@
         private RadioButton rb_ascending;
         private RadioButton rb_descending;
         private Button btn_search;
-        private TextBox textBox1;
+        private TextBox tb_keyWord;
         private Button btn_addToCart;
         private Label lbl_userName;
         private Button btn_logout;

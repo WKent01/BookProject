@@ -88,9 +88,9 @@ namespace BookProject
 
 
 
-            String[] list = new String[6];
+            String[] list = new String[7];
 
-            for(int i = 0; i < 5; i++)
+            for(int i = 0; i < 6; i++)
             {
                 String item = dg_shopView.Rows[e.RowIndex].Cells[i].Value.ToString();
                 list[i] = item;
@@ -101,8 +101,6 @@ namespace BookProject
                 Console.WriteLine(list[i]);
             }
 
-
-            //MessageBox.Show(dg_shopView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString());
 
             cart.Add(list);
 

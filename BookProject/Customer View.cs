@@ -92,7 +92,7 @@ namespace BookProject
 
             for(int i = 0; i < 6; i++)
             {
-                String item = dg_shopView.Rows[e.RowIndex].Cells[i].Value.ToString();
+                String item = dg_shopView.Rows[e.RowIndex].Cells[i].Value.ToString() ?? throw new ArgumentException();
                 list[i] = item;
                 
             }

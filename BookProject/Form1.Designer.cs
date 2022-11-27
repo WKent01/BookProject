@@ -97,6 +97,7 @@
             this.btn_createAcc.TabIndex = 7;
             this.btn_createAcc.Text = "Create Account";
             this.btn_createAcc.UseVisualStyleBackColor = true;
+            this.btn_createAcc.Click += new System.EventHandler(this.btn_createAcc_Click);
             // 
             // Form1
             // 

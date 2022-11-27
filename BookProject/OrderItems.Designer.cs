@@ -28,31 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lv_orderItems = new System.Windows.Forms.ListView();
+            this.dg_OrderItems = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_OrderItems)).BeginInit();
             this.SuspendLayout();
             // 
-            // lv_orderItems
+            // dg_OrderItems
             // 
-            this.lv_orderItems.Location = new System.Drawing.Point(12, 12);
-            this.lv_orderItems.Name = "lv_orderItems";
-            this.lv_orderItems.Size = new System.Drawing.Size(611, 426);
-            this.lv_orderItems.TabIndex = 0;
-            this.lv_orderItems.UseCompatibleStateImageBehavior = false;
+            this.dg_OrderItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_OrderItems.Location = new System.Drawing.Point(12, 12);
+            this.dg_OrderItems.Name = "dg_OrderItems";
+            this.dg_OrderItems.RowTemplate.Height = 25;
+            this.dg_OrderItems.Size = new System.Drawing.Size(610, 452);
+            this.dg_OrderItems.TabIndex = 0;
             // 
             // OrderItems
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 476);
-            this.Controls.Add(this.lv_orderItems);
+            this.Controls.Add(this.dg_OrderItems);
             this.Name = "OrderItems";
             this.Text = "Order #XXXXX";
+            this.Load += new System.EventHandler(this.OrderItems_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_OrderItems)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private ListView lv_orderItems;
+        private DataGridView dg_OrderItems;
     }
 }

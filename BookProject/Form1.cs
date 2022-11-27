@@ -76,5 +76,11 @@ namespace BookProject
                 MessageBox.Show("Invalid login");
             }
         }
+
+        private void btn_createAcc_Click(object sender, EventArgs e)
+        {
+            CreateAcc create = new CreateAcc();
+            create.Show();
+        }
     }
 }

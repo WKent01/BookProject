@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lv_orderHist = new System.Windows.Forms.ListView();
             this.btn_viewOrder = new System.Windows.Forms.Button();
+            this.dg_OrderView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_OrderView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lv_orderHist
-            // 
-            this.lv_orderHist.Location = new System.Drawing.Point(12, 12);
-            this.lv_orderHist.Name = "lv_orderHist";
-            this.lv_orderHist.Size = new System.Drawing.Size(432, 389);
-            this.lv_orderHist.TabIndex = 2;
-            this.lv_orderHist.UseCompatibleStateImageBehavior = false;
             // 
             // btn_viewOrder
             // 
@@ -50,22 +43,35 @@
             this.btn_viewOrder.UseVisualStyleBackColor = true;
             this.btn_viewOrder.Click += new System.EventHandler(this.btn_viewOrder_Click);
             // 
+            // dg_OrderView
+            // 
+            this.dg_OrderView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_OrderView.Location = new System.Drawing.Point(12, 12);
+            this.dg_OrderView.Name = "dg_OrderView";
+            this.dg_OrderView.ReadOnly = true;
+            this.dg_OrderView.RowTemplate.Height = 25;
+            this.dg_OrderView.Size = new System.Drawing.Size(432, 399);
+            this.dg_OrderView.TabIndex = 4;
+            this.dg_OrderView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_OrderView_CellContentClick);
+            // 
             // Orders
             // 
             this.AcceptButton = this.btn_viewOrder;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 450);
+            this.Controls.Add(this.dg_OrderView);
             this.Controls.Add(this.btn_viewOrder);
-            this.Controls.Add(this.lv_orderHist);
             this.Name = "Orders";
             this.Text = "Orders";
+            this.Load += new System.EventHandler(this.Orders_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dg_OrderView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private ListView lv_orderHist;
         private Button btn_viewOrder;
+        private DataGridView dg_OrderView;
     }
 }

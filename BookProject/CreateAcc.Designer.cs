@@ -35,11 +35,13 @@
             this.lbl_phone = new System.Windows.Forms.Label();
             this.tb_fName = new System.Windows.Forms.TextBox();
             this.tb_lName = new System.Windows.Forms.TextBox();
+            this.tb_password = new System.Windows.Forms.TextBox();
             this.tb_address = new System.Windows.Forms.TextBox();
             this.tb_email = new System.Windows.Forms.TextBox();
-            this.tb_phone = new System.Windows.Forms.TextBox();
             this.btn_createAcc = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
+            this.tb_phone = new System.Windows.Forms.TextBox();
+            this.lbl_Password = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_fName
@@ -63,16 +65,17 @@
             // lbl_address
             // 
             this.lbl_address.AutoSize = true;
-            this.lbl_address.Location = new System.Drawing.Point(35, 84);
+            this.lbl_address.Location = new System.Drawing.Point(35, 113);
             this.lbl_address.Name = "lbl_address";
             this.lbl_address.Size = new System.Drawing.Size(55, 15);
             this.lbl_address.TabIndex = 2;
             this.lbl_address.Text = "Address: ";
+            this.lbl_address.Click += new System.EventHandler(this.lbl_address_Click);
             // 
             // lbl_email
             // 
             this.lbl_email.AutoSize = true;
-            this.lbl_email.Location = new System.Drawing.Point(48, 118);
+            this.lbl_email.Location = new System.Drawing.Point(40, 139);
             this.lbl_email.Name = "lbl_email";
             this.lbl_email.Size = new System.Drawing.Size(42, 15);
             this.lbl_email.TabIndex = 3;
@@ -81,7 +84,7 @@
             // lbl_phone
             // 
             this.lbl_phone.AutoSize = true;
-            this.lbl_phone.Location = new System.Drawing.Point(43, 147);
+            this.lbl_phone.Location = new System.Drawing.Point(35, 168);
             this.lbl_phone.Name = "lbl_phone";
             this.lbl_phone.Size = new System.Drawing.Size(47, 15);
             this.lbl_phone.TabIndex = 4;
@@ -101,30 +104,30 @@
             this.tb_lName.Size = new System.Drawing.Size(100, 23);
             this.tb_lName.TabIndex = 6;
             // 
+            // tb_password
+            // 
+            this.tb_password.Location = new System.Drawing.Point(96, 81);
+            this.tb_password.Name = "tb_password";
+            this.tb_password.Size = new System.Drawing.Size(100, 23);
+            this.tb_password.TabIndex = 7;
+            // 
             // tb_address
             // 
-            this.tb_address.Location = new System.Drawing.Point(96, 81);
+            this.tb_address.Location = new System.Drawing.Point(96, 110);
             this.tb_address.Name = "tb_address";
             this.tb_address.Size = new System.Drawing.Size(100, 23);
-            this.tb_address.TabIndex = 7;
+            this.tb_address.TabIndex = 8;
             // 
             // tb_email
             // 
-            this.tb_email.Location = new System.Drawing.Point(96, 110);
+            this.tb_email.Location = new System.Drawing.Point(96, 139);
             this.tb_email.Name = "tb_email";
             this.tb_email.Size = new System.Drawing.Size(100, 23);
-            this.tb_email.TabIndex = 8;
-            // 
-            // tb_phone
-            // 
-            this.tb_phone.Location = new System.Drawing.Point(96, 139);
-            this.tb_phone.Name = "tb_phone";
-            this.tb_phone.Size = new System.Drawing.Size(100, 23);
-            this.tb_phone.TabIndex = 9;
+            this.tb_email.TabIndex = 9;
             // 
             // btn_createAcc
             // 
-            this.btn_createAcc.Location = new System.Drawing.Point(23, 179);
+            this.btn_createAcc.Location = new System.Drawing.Point(17, 213);
             this.btn_createAcc.Name = "btn_createAcc";
             this.btn_createAcc.Size = new System.Drawing.Size(75, 23);
             this.btn_createAcc.TabIndex = 10;
@@ -134,7 +137,7 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.Location = new System.Drawing.Point(121, 179);
+            this.btn_cancel.Location = new System.Drawing.Point(121, 213);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(75, 23);
             this.btn_cancel.TabIndex = 11;
@@ -142,16 +145,34 @@
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
+            // tb_phone
+            // 
+            this.tb_phone.Location = new System.Drawing.Point(96, 168);
+            this.tb_phone.Name = "tb_phone";
+            this.tb_phone.Size = new System.Drawing.Size(100, 23);
+            this.tb_phone.TabIndex = 12;
+            // 
+            // lbl_Password
+            // 
+            this.lbl_Password.AutoSize = true;
+            this.lbl_Password.Location = new System.Drawing.Point(33, 84);
+            this.lbl_Password.Name = "lbl_Password";
+            this.lbl_Password.Size = new System.Drawing.Size(57, 15);
+            this.lbl_Password.TabIndex = 13;
+            this.lbl_Password.Text = "Password";
+            // 
             // CreateAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(223, 248);
+            this.Controls.Add(this.lbl_Password);
+            this.Controls.Add(this.tb_phone);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_createAcc);
-            this.Controls.Add(this.tb_phone);
             this.Controls.Add(this.tb_email);
             this.Controls.Add(this.tb_address);
+            this.Controls.Add(this.tb_password);
             this.Controls.Add(this.tb_lName);
             this.Controls.Add(this.tb_fName);
             this.Controls.Add(this.lbl_phone);
@@ -161,6 +182,7 @@
             this.Controls.Add(this.lbl_fName);
             this.Name = "CreateAcc";
             this.Text = "My Account";
+            this.Load += new System.EventHandler(this.CreateAcc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,10 +197,12 @@
         private Label lbl_phone;
         private TextBox tb_fName;
         private TextBox tb_lName;
+        private TextBox tb_password;
         private TextBox tb_address;
         private TextBox tb_email;
-        private TextBox tb_phone;
         private Button btn_createAcc;
         private Button btn_cancel;
+        private TextBox tb_phone;
+        private Label lbl_Password;
     }
 }

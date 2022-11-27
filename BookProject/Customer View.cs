@@ -90,20 +90,22 @@ namespace BookProject
 
             String[] list = new String[7];
 
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 String item = dg_shopView.Rows[e.RowIndex].Cells[i].Value.ToString() ?? throw new ArgumentException();
                 list[i] = item;
-                
-            }
 
-            for(int i = 0; i < list.Length; i++) {
-                Console.WriteLine(list[i]);
             }
 
 
             cart.Add(list);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Orders order = new Orders();
+            order.Show();
         }
     }
 }

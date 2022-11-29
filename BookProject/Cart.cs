@@ -19,7 +19,7 @@ namespace BookProject
 
     {
 
-        float price = 0;
+        decimal price = 0;
 
         public Cart()
         {
@@ -84,7 +84,7 @@ namespace BookProject
             foreach (String[] item in Customer_View.cart)
             {
 
-                price += float.Parse(item[5]);
+                price += decimal.Parse(item[5]);
 
                 String outp = item[0] + " " + item[1] + " " + item[2] + " " + item[3] + " " + item[4] + " " + item[5];
 
@@ -113,7 +113,7 @@ namespace BookProject
                     {
                         //Customer_View.cart.Remove(item);
                         spot = Customer_View.cart.IndexOf(item);
-                        price -= float.Parse(item[5]);
+                        price -= decimal.Parse(item[5]);
                     }
                 }
             }catch(Exception ex) {
@@ -126,6 +126,11 @@ namespace BookProject
             lb_cart.Items.Remove(lb_cart.Text);
             
             //MessageBox.Show(Customer_View.cart.Count.ToString());
+        }
+
+        private void btn_return_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

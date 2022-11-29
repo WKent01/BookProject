@@ -114,6 +114,7 @@
             this.Controls.Add(this.btn_query);
             this.Name = "AdminView";
             this.Text = "AdminView";
+            this.Load += new System.EventHandler(this.AdminView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_aTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

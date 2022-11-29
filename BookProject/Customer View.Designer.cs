@@ -30,15 +30,11 @@
         {
             this.cb_sortBy = new System.Windows.Forms.ComboBox();
             this.lbl_sortBy = new System.Windows.Forms.Label();
-            this.rb_ascending = new System.Windows.Forms.RadioButton();
-            this.rb_descending = new System.Windows.Forms.RadioButton();
             this.btn_search = new System.Windows.Forms.Button();
             this.tb_keyWord = new System.Windows.Forms.TextBox();
-            this.btn_addToCart = new System.Windows.Forms.Button();
             this.lbl_userName = new System.Windows.Forms.Label();
             this.btn_logout = new System.Windows.Forms.Button();
             this.btn_viewCart = new System.Windows.Forms.Button();
-            this.btn_account = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dg_shopView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dg_shopView)).BeginInit();
@@ -54,7 +50,8 @@
             "FName",
             "LName",
             "Publication_Date",
-            "Price"});
+            "Price",
+            "Category_Description"});
             this.cb_sortBy.Location = new System.Drawing.Point(96, 64);
             this.cb_sortBy.Name = "cb_sortBy";
             this.cb_sortBy.Size = new System.Drawing.Size(121, 23);
@@ -68,28 +65,6 @@
             this.lbl_sortBy.Size = new System.Drawing.Size(47, 15);
             this.lbl_sortBy.TabIndex = 1;
             this.lbl_sortBy.Text = "Sort by:";
-            // 
-            // rb_ascending
-            // 
-            this.rb_ascending.AutoSize = true;
-            this.rb_ascending.Location = new System.Drawing.Point(227, 65);
-            this.rb_ascending.Name = "rb_ascending";
-            this.rb_ascending.Size = new System.Drawing.Size(81, 19);
-            this.rb_ascending.TabIndex = 2;
-            this.rb_ascending.TabStop = true;
-            this.rb_ascending.Text = "Ascending";
-            this.rb_ascending.UseVisualStyleBackColor = true;
-            // 
-            // rb_descending
-            // 
-            this.rb_descending.AutoSize = true;
-            this.rb_descending.Location = new System.Drawing.Point(314, 64);
-            this.rb_descending.Name = "rb_descending";
-            this.rb_descending.Size = new System.Drawing.Size(87, 19);
-            this.rb_descending.TabIndex = 3;
-            this.rb_descending.TabStop = true;
-            this.rb_descending.Text = "Descending";
-            this.rb_descending.UseVisualStyleBackColor = true;
             // 
             // btn_search
             // 
@@ -108,16 +83,6 @@
             this.tb_keyWord.Size = new System.Drawing.Size(277, 23);
             this.tb_keyWord.TabIndex = 5;
             // 
-            // btn_addToCart
-            // 
-            this.btn_addToCart.Location = new System.Drawing.Point(12, 400);
-            this.btn_addToCart.Name = "btn_addToCart";
-            this.btn_addToCart.Size = new System.Drawing.Size(162, 38);
-            this.btn_addToCart.TabIndex = 6;
-            this.btn_addToCart.Text = "Add to Cart";
-            this.btn_addToCart.UseVisualStyleBackColor = true;
-            this.btn_addToCart.Click += new System.EventHandler(this.btn_addToCart_Click);
-            // 
             // lbl_userName
             // 
             this.lbl_userName.AutoSize = true;
@@ -135,10 +100,11 @@
             this.btn_logout.TabIndex = 9;
             this.btn_logout.Text = "Logout";
             this.btn_logout.UseVisualStyleBackColor = true;
+            this.btn_logout.Click += new System.EventHandler(this.btn_logout_Click);
             // 
             // btn_viewCart
             // 
-            this.btn_viewCart.Location = new System.Drawing.Point(184, 400);
+            this.btn_viewCart.Location = new System.Drawing.Point(12, 400);
             this.btn_viewCart.Name = "btn_viewCart";
             this.btn_viewCart.Size = new System.Drawing.Size(165, 38);
             this.btn_viewCart.TabIndex = 10;
@@ -146,18 +112,9 @@
             this.btn_viewCart.UseVisualStyleBackColor = true;
             this.btn_viewCart.Click += new System.EventHandler(this.btn_viewCart_Click);
             // 
-            // btn_account
-            // 
-            this.btn_account.Location = new System.Drawing.Point(565, 35);
-            this.btn_account.Name = "btn_account";
-            this.btn_account.Size = new System.Drawing.Size(152, 23);
-            this.btn_account.TabIndex = 11;
-            this.btn_account.Text = "Account Settings";
-            this.btn_account.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(565, 68);
+            this.button1.Location = new System.Drawing.Point(565, 35);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(152, 23);
             this.button1.TabIndex = 12;
@@ -183,15 +140,11 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dg_shopView);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_account);
             this.Controls.Add(this.btn_viewCart);
             this.Controls.Add(this.btn_logout);
             this.Controls.Add(this.lbl_userName);
-            this.Controls.Add(this.btn_addToCart);
             this.Controls.Add(this.tb_keyWord);
             this.Controls.Add(this.btn_search);
-            this.Controls.Add(this.rb_descending);
-            this.Controls.Add(this.rb_ascending);
             this.Controls.Add(this.lbl_sortBy);
             this.Controls.Add(this.cb_sortBy);
             this.Name = "Customer_View";
@@ -207,15 +160,11 @@
 
         private ComboBox cb_sortBy;
         private Label lbl_sortBy;
-        private RadioButton rb_ascending;
-        private RadioButton rb_descending;
         private Button btn_search;
         private TextBox tb_keyWord;
-        private Button btn_addToCart;
         private Label lbl_userName;
         private Button btn_logout;
         private Button btn_viewCart;
-        private Button btn_account;
         private Button button1;
         private DataGridView dg_shopView;
     }

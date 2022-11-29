@@ -18,10 +18,12 @@ namespace BookProject
 
         private string query = "";
         public static List<String[]> cart = new List<String[]>();
+        Form1 opener;
 
-        public Customer_View()
+        public Customer_View(Form1 opener)
         {
             InitializeComponent();
+            this.opener = opener;
         }
 
         public DataTable ExecuteQuery(string query)
@@ -59,10 +61,19 @@ namespace BookProject
 
         private void btn_search_Click(object sender, EventArgs e)
         {
-            query = "SELECT ISBN, Title, FName, LName, Publication_Date, Price FROM Books\nINNER JOIN Author ON Books.AuthorID = Author.AuthorID ";
+            if(cb_sortBy.SelectedIndex == 7)
+            {
+                query = "SELECT ISBN, Title, FName, LName, Publication_Date, Price, Category_Description FROM Books" +
+                "\nINNER JOIN Author ON Books.AuthorID = Author.AuthorID\nINNER JOIN Book_Category_Relation ON Books.ISBN = Book_Category_Relation.Book\nINNER JOIN Book_Categories ON Book_Categories.Category_Code = Book_Category_Relation.Book_Category";
+            }
+            else
+            {
+                query = "SELECT ISBN, Title, FName, LName, Publication_Date, Price FROM Books" +
+                "\nINNER JOIN Author ON Books.AuthorID = Author.AuthorID";
+            }
 
             if(cb_sortBy.SelectedIndex > 1) {
-                query += "WHERE " + cb_sortBy.Text + " LIKE \"%" + tb_keyWord.Text.Trim() + "%\"";
+                query += "\nWHERE " + cb_sortBy.Text + " LIKE \"%" + tb_keyWord.Text.Trim() + "%\"";
             }
 
 
@@ -106,6 +117,12 @@ namespace BookProject
         {
             Orders order = new Orders();
             order.Show();
+        }
+
+        private void btn_logout_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            opener.Show();
         }
     }
 }

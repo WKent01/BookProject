@@ -113,6 +113,7 @@
             this.btn_return.TabIndex = 8;
             this.btn_return.Text = "Return to Store";
             this.btn_return.UseVisualStyleBackColor = true;
+            this.btn_return.Click += new System.EventHandler(this.btn_return_Click);
             // 
             // Cart
             // 

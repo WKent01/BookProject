@@ -13,9 +13,12 @@ namespace BookProject
 {
     public partial class CreateAcc : Form
     {
-        public CreateAcc()
+
+        Form1 opener;
+        public CreateAcc(Form1 opener)
         {
             InitializeComponent();
+            this.opener = opener;
         }
 
         public DataTable ExecuteQuery(string query)
@@ -40,8 +43,7 @@ namespace BookProject
 
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            Form1 f1 = new Form1();
-            f1.Show();
+            this.Close();
         }
 
         private void btn_createAcc_Click(object sender, EventArgs e)
@@ -55,6 +57,9 @@ namespace BookProject
             String contact_details_query = "INSERT INTO Customer_Contact_Details (ContactID, Address, Email, Phone) VALUES (" + CID + ", \"" + tb_address.Text.Trim() + "\", \"" + tb_email.Text.Trim() + "\", \"" + tb_phone.Text.Trim() + "\")";
             ExecuteQuery(contact_details_query);
 
+            MessageBox.Show("Account created");
+
+            this.Close();
         }
 
         private void lbl_address_Click(object sender, EventArgs e)

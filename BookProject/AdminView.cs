@@ -14,6 +14,7 @@ namespace BookProject
 {
     public partial class AdminView : Form
     {
+
         public AdminView()
         {
             InitializeComponent();
@@ -62,6 +63,11 @@ namespace BookProject
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void AdminView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

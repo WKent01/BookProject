@@ -14,8 +14,9 @@ namespace BookProject
         public static String Pw = "";
 
         //SQLiteConnection con;
-       // SQLiteCommand cmd;
+        // SQLiteCommand cmd;
         //SQLiteDataReader dr;
+
 
         public Form1()
         {
@@ -31,7 +32,6 @@ namespace BookProject
         {
             AdminView av1 = new AdminView();
             av1.Show();
-            this.Hide();
         }
 
         private Boolean login()
@@ -65,7 +65,7 @@ namespace BookProject
 
             if (login())
             {
-                Customer_View shop1 = new Customer_View();
+                Customer_View shop1 = new Customer_View(this);
                 FName = tb_fName.Text.Trim();
                 Pw = tb_Password.Text.Trim();
                 shop1.Show();
@@ -79,7 +79,7 @@ namespace BookProject
 
         private void btn_createAcc_Click(object sender, EventArgs e)
         {
-            CreateAcc create = new CreateAcc();
+            CreateAcc create = new CreateAcc(this);
             create.Show();
         }
     }

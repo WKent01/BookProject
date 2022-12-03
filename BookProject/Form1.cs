@@ -36,7 +36,7 @@ namespace BookProject
 
         private Boolean login()
         {
-            SQLiteConnection con = new SQLiteConnection(@"data source =  C:\Users\kentw\source\repos\BookProject\BookProject\BookStore.db");
+            SQLiteConnection con = new SQLiteConnection(@"data source =  D:\AA School\AAA CURRENT CLASSES\CSCI 4325 Database Management Systems\Database Project\BookProject\BookStore.db");
             con.Open();
 
             SQLiteCommand cmd = new SQLiteCommand("SELECT * FROM Customer WHERE FName = \"" + tb_fName.Text.Trim() + "\" AND Password = \"" + tb_Password.Text.Trim() + "\"", con);

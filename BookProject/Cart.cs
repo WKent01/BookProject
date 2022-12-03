@@ -28,7 +28,7 @@ namespace BookProject
 
         public DataTable ExecuteQuery(string query)
         {
-            SQLiteConnection con = new SQLiteConnection(@"data source =  C:\Users\kentw\source\repos\BookProject\BookProject\BookStore.db");
+            SQLiteConnection con = new SQLiteConnection(@"data source =  D:\AA School\AAA CURRENT CLASSES\CSCI 4325 Database Management Systems\Database Project\BookProject\BookStore.db");
             con.Open();
             SQLiteCommand cmd = new SQLiteCommand(query, con);
             SQLiteDataAdapter adapter = new SQLiteDataAdapter(cmd);
@@ -64,6 +64,7 @@ namespace BookProject
             }
 
             //MessageBox.Show("Order has been placed", "Order Status Update");
+            Customer_View.cart.Clear();
             this.Close();
         }
 

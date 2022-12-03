@@ -40,6 +40,7 @@
             this.dg_OrderItems.RowTemplate.Height = 25;
             this.dg_OrderItems.Size = new System.Drawing.Size(610, 452);
             this.dg_OrderItems.TabIndex = 0;
+            this.dg_OrderItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_OrderItems_CellContentClick);
             // 
             // OrderItems
             // 
